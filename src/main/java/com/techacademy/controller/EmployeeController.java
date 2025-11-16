@@ -68,11 +68,6 @@ public class EmployeeController {
             return "employees/update";
         }
 
-        //パスワード欄が空白なら、そのまま
-        Employee existing = employeeService.findByCode(employee.getCode());
-        if ("".equals(employee.getPassword())) {
-            employee.setPassword(existing.getPassword());
-        }
 
       //更新とPWチェック
         ErrorKinds result = employeeService.update(employee);
